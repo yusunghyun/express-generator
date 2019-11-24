@@ -34,4 +34,8 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.User = require('./User.js')(sequelize,Sequelize); //요자체가 User.js에서 export로 보낸 함수를 포함한거라 () 끼자!
+db.Score = require('./Score.js')(sequelize,Sequelize); //요자체가 User.js에서 export로 보낸 함수를 포함한거라 () 끼자!
+
+
 module.exports = db;
